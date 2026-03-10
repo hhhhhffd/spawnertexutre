@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "com.example.spawnertexture.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["ItemRendererMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

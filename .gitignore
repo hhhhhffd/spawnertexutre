@@ -1,0 +1,44 @@
+# Gradle
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# Fabric Loom (generated sources, caches)
+.loom/
+
+# Minecraft run directories
+run/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Дополнительные системные и игровые файлы
+*.log
+/logs/
+/crash-reports/
+/debug/
+
+# Секреты и локальные конфиги
+local.properties
+*.keystore
+*.jks
+authlib-injector.jar
+
+# Расширения для архивов (если делаешь билды вручную в корень)
+*.jar
+!gradle-wrapper.jar
