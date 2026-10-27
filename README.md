@@ -1,35 +1,59 @@
-# SpawnerTexture
+<div align="center">
 
-Fabric клиент-мод для Minecraft 1.21.4. Заменяет иконку спавнера в инвентаре на текстуру моба, который в нём настроен.
+<h1>SpawnerTexture</h1>
+<hr>
 
-## Как это работает
+**Client-side Fabric mod that shows the mob texture on spawner icons in inventories**
 
-Мод перехватывает рендер слотов инвентаря через миксин (`HandledScreen.drawSlot`). Если предмет — спавнер с известным мобом, вместо стандартной иконки рисуется PNG-текстура этого моба.
+![Minecraft](https://img.shields.io/badge/MINECRAFT-1.21.4-62B47A?style=flat-square&logo=minecraft&logoColor=white)
+![Fabric](https://img.shields.io/badge/FABRIC_LOADER-0.16.10-DBD0B4?style=flat-square)
+![Java](https://img.shields.io/badge/JAVA-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Release](https://img.shields.io/github/v/release/hhhhhffd/spawnertexutre?style=flat-square)
+![License](https://img.shields.io/github/license/hhhhhffd/spawnertexutre?style=flat-square)
 
-## Добавление текстур
+[Download](https://github.com/hhhhhffd/spawnertexutre/releases/tag/Release) · [Build](#build) · [License](#license)
 
-Положи PNG-файлы (16×16) по пути:
+</div>
 
-```
+> [!NOTE]
+> Archived — no longer maintained.
+
+## What it is
+
+SpawnerTexture replaces the inventory icon of a spawner with a 16x16 texture of the mob it is configured for, so spawners can be told apart at a glance. A Mixin intercepts slot rendering in `HandledScreen.drawSlot`; if the item is a spawner with a known mob, the mob's PNG is drawn instead of the default icon.
+
+## Textures
+
+Mob textures are PNG files at:
+
+```text
 src/main/resources/assets/spawnertexture/textures/mob/<mob_id>.png
 ```
 
-Например: `zombie.png`, `skeleton.png`, `creeper.png` и т.д.
+For example `zombie.png`, `skeleton.png`, `creeper.png`. The supported mob IDs are listed in `KNOWN_MOBS` in `SpawnerTextureManager.java`. Textures can also be supplied by a separate resource pack and are picked up on load and on pack change. The source tree does not contain mob PNGs.
 
-Полный список поддерживаемых мобов — в `SpawnerTextureManager.java` (поле `KNOWN_MOBS`).  
-Текстуры можно также поставлять отдельным ресурспаком — мод подхватит их автоматически при загрузке/смене пака.
+## Stack
 
-## Сборка
+| Part | Version |
+| --- | --- |
+| Minecraft | 1.21.4 |
+| Fabric Loader | >= 0.16.0 (built with 0.16.10) |
+| Fabric API | 0.119.2+1.21.4 |
+| Java | 21 |
+| Mod version | 1.0.0 |
+
+## Install
+
+Download `spawnertexture-1.0.0.jar` from the [release](https://github.com/hhhhhffd/spawnertexutre/releases/tag/Release) and put it into `mods/` together with Fabric API.
+
+## Build
 
 ```bash
 ./gradlew build
 ```
 
-Готовый JAR окажется в `build/libs/`.
+The JAR is written to `build/libs/`.
 
-## Стек
+## License
 
-- Minecraft 1.21.4
-- Fabric Loader 0.16.10
-- Fabric API 0.119.2
-- Java 21
+MIT, see [LICENSE](LICENSE).
