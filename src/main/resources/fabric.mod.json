@@ -4,6 +4,7 @@
   "version": "${version}",
   "name": "Spawner Texture",
   "description": "Отображает текстуру моба на иконке спавнера в инвентаре",
+  "license": "MIT",
   "authors": ["example"],
   "environment": "client",
   "entrypoints": {
